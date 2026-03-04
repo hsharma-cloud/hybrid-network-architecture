@@ -138,3 +138,49 @@ A site-to-site IPsec VPN allows secure communication between the on-prem network
 **Controlled Network Access**
 
 Firewall policies regulate communication between network segments and external environments.
+
+                    Cloud Environment
+                  (Azure / AWS VNet)
+                         │
+                         │
+                  +---------------+
+                  |   VPN Gateway |
+                  +---------------+
+                         │
+                     IPsec VPN
+                         │
+                         │
+                  +---------------+
+                  |    pfSense    |
+                  | Firewall/VPN  |
+                  +---------------+
+                         │
+          ───────────────┼────────────────
+                         │
+                Network Segmentation
+                         │
+
+        ┌───────────────┬───────────────┬───────────────┬───────────────┐
+        │               │               │               │               │
+     VLAN 10         VLAN 20         VLAN 30         VLAN 40
+   Management         Servers        Security         Clients
+  192.168.10.0     192.168.20.0    192.168.30.0     192.168.40.0
+
+        │               │               │               │
+        │               │               │               │
+   +-----------+   +-----------+   +-----------+   +-----------+
+   |  Domain   |   |   Web     |   |  Security |   |  Windows  |
+   |Controller |   |  Server   |   |  Tools    |   |  Clients  |
+   |  AD/DNS   |   |           |   | (Kali etc)|   |           |
+   +-----------+   +-----------+   +-----------+   +-----------+
+                         │
+                         │
+                   +-----------+
+                   | Database  |
+                   |  Server   |
+                   +-----------+
+                         │
+                   +-----------+
+                   |  Storage  |
+                   |  Server   |
+                   +-----------+
