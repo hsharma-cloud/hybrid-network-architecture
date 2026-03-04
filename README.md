@@ -87,3 +87,30 @@ Example storage structure:
 └── projects  
 
 Centralized storage simplifies data management and supports backup strategies.
+
+
+## Hybrid Connectivity
+
+Hybrid connectivity allows the on-premises infrastructure to communicate securely with cloud environments.
+
+This design uses a **site-to-site IPsec VPN** between the on-prem firewall and a cloud VPN gateway.
+
+Cloud Network  
+10.x.x.x  
+│  
+Cloud VPN Gateway  
+│  
+IPsec Tunnel  
+│  
+Firewall  
+│  
+On-Prem Network  
+192.168.x.x  
+
+The firewall acts as the VPN gateway and routes traffic between internal networks and the cloud virtual network.
+
+This configuration allows:
+
+- Secure communication between on-prem servers and cloud workloads
+- Extension of internal services into cloud environments
+- Controlled routing between network segments and cloud infrastructure
