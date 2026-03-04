@@ -114,3 +114,27 @@ This configuration allows:
 - Secure communication between on-prem servers and cloud workloads
 - Extension of internal services into cloud environments
 - Controlled routing between network segments and cloud infrastructure
+
+## Design Principles
+
+The hybrid network architecture follows several core design principles commonly used in enterprise environments.
+
+**Network Segmentation**
+
+Infrastructure components are separated into different VLANs to reduce unnecessary communication between systems and limit potential lateral movement.
+
+**Centralized Identity Management**
+
+Active Directory provides centralized authentication and authorization for users, servers, and client systems.
+
+**Layered Architecture**
+
+Application services follow a multi-tier architecture separating client systems, application servers, and database services.
+
+**Secure Hybrid Connectivity**
+
+A site-to-site IPsec VPN allows secure communication between the on-prem network and cloud environments.
+
+**Controlled Network Access**
+
+Firewall policies regulate communication between network segments and external environments.
