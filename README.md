@@ -20,3 +20,70 @@ The internal network is divided into multiple VLANs to isolate different infrast
 
 Each VLAN uses the firewall as the default gateway. This segmentation model reduces unnecessary communication between systems and helps enforce security boundaries.
 
+## Infrastructure Components
+
+The hybrid network environment includes several core infrastructure services that support identity management, application hosting, data storage, and client access.
+
+### Identity Infrastructure
+
+Active Directory provides centralized authentication and directory services across the network.
+
+Capabilities include:
+
+- User authentication
+- Group policy management
+- Centralized authorization
+- DNS services
+
+These services allow systems and users to authenticate and access resources securely.
+
+---
+
+### Client Systems
+
+Windows clients join the domain to simulate enterprise endpoint environments.
+
+Domain-joined clients receive:
+
+- Domain authentication
+- Group policy configuration
+- Controlled access to shared resources
+
+This enables centralized management of user systems.
+
+---
+
+### Application Infrastructure
+
+Applications follow a multi-tier architecture separating client systems, application servers, and database services.
+
+Client  
+│  
+Web Server  
+│  
+Database Server  
+
+This design separates presentation, application logic, and data storage layers.
+
+---
+
+### Database Infrastructure
+
+The database server stores and manages application data.
+
+Access to the database is restricted to application servers to reduce exposure and enforce security boundaries.
+
+---
+
+### Storage Infrastructure
+
+A centralized storage server provides shared file services for users and servers.
+
+Example storage structure:
+
+/srv/storage  
+├── shared  
+├── backups  
+└── projects  
+
+Centralized storage simplifies data management and supports backup strategies.
