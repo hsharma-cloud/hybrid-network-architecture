@@ -1,4 +1,4 @@
-# Hybrid Enterprise Network Design
+# Hybrid Network Design
 
 ## Overview
 
